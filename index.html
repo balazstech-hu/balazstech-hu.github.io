@@ -237,6 +237,10 @@
   #modal .nx li b{color:#dfe2f2;font-weight:600}
   #modal .nx li small{display:block;color:#ffcf5c;font-size:.78rem;margin-top:2px}
   .status em.plan{color:#8fa6ff;background:rgba(111,140,255,.12)}
+  .hero-vc{display:none;margin-top:18px;font-size:.85rem;color:var(--muted)}
+  .hero-vc b{color:var(--a2)}
+  @media(max-width:560px){.hero-vc:not([hidden]){display:block}}
+  footer .vc b{color:var(--a2);font-weight:600}
   .home-m{display:none}
 
   /* Összehasonlítás */
@@ -491,6 +495,7 @@
     <h1>Szia,<br><span class="grad">Balázs</span> vagyok.</h1>
     <p>Számítástechnikával foglalkozom: számítógépeket építek és programozok.</p>
     <div class="btns"><a class="btn primary" href="#munkaim">Munkáim</a><a class="btn" href="#kapcsolat">Írj nekem</a></div>
+    <div class="hero-vc" hidden>👁 Eddig <b>0</b> látogatás</div>
   </section>
 
   <section class="view" data-view="rolam">
@@ -576,47 +581,48 @@
   <section class="view works" data-view="munkaim">
     <h2 class="reveal">Munkáim <small class="hint">görgess ↓</small></h2>
     <div class="scroll-area reveal"><div class="grid">
-      <div class="card work reveal" tabindex="0"><div class="num">01</div><h3>Nexus AI <span class="badge">Folyamatban</span></h3><p class="sub">Helyi MI · Windows 11 · v4.61 telepítve</p><span class="more">Részletek →</span>
-        <div class="detail"><p>Helyi, Windows 11 x64-es, magyar nyelvű grafikus program. A lényege, hogy a <b>saját gépemen futó modellek</b> dolgozzanak. <b class="wip">Folyamatban lévő projekt</b> – a telepített változat a <b>v4.61</b>, a v4.62 utáni fejlesztési forrás még nincs kiadva.</p>
+      <div class="card work reveal" tabindex="0"><div class="num">01</div><h3>Nexus AI <span class="badge">Folyamatban</span></h3><p class="sub">Helyi MI · Windows 11 · legutóbbi kiadás: v4.61</p><span class="more">Részletek →</span>
+        <div class="detail"><p>Helyi, Windows 11 x64-es, magyar nyelvű grafikus program. A lényege, hogy a <b>saját gépemen futó modellek</b> dolgozzanak. <b class="wip">Folyamatban lévő projekt</b> – a legutóbbi kiadás a <b>v4.61</b>, a v4.62 utáni munkák fejlesztési forrásban vannak, kiadva még nincsenek.</p>
         <div class="status"><h5>Fejlesztési állapot</h5>
-          <div class="st"><span>Kész és használható</span><em class="ok">v4.61 – telepítve</em></div>
-          <div class="st"><span>Önfejlesztési lánc, bővítések</span><em class="dev">Fejlesztési forrás, nincs kiadva</em></div>
-          <div class="st"><span>M5–M8</span><em class="plan">Tervezett</em></div>
+          <div class="st"><span>Kiadott, használható</span><em class="ok">v4.61</em></div>
+          <div class="st"><span>Szinkron modul, önfejlesztés, profilregiszter</span><em class="dev">Fejlesztési forrás, nincs kiadva</em></div>
+          <div class="st"><span>Új játékadapterek, szinkron 2. fázis, M6–M8</span><em class="plan">Tervezett, nincs elkezdve</em></div>
         </div>
-        <div class="nx"><h5>✅ Kész és használható (v4.61)</h5><ul>
-          <li><b>Chat helyi modellekkel (Ollama):</b> egy állandó, nem törölhető alapmodell (qwen3.5:9b). Automatikus módban a feladathoz kellő modellt jóváhagyás nélkül tölti le, kézi választásnál jóváhagyás kell; a válasznál látszik a modell neve. Külső MI csak elakadáskor, jóváhagyással.</li>
-          <li><b>Beszélgetések és projektek:</b> tartósan, helyben mentve, chatenként külön modellbeállítással.</li>
-          <li><b>Engedélyrendszer:</b> minden műveletnél egyszeri jóváhagyás (csak memóriában él), STOP és vészleállítás, chat-várólista több üzenettel.</li>
-          <li><b>Webes források:</b> Brave-keresés, Open-Meteo időjárás, ZIP-elemzés (csak olvasás, nincs kibontás).</li>
-          <li><b>Fejlesztőmotor (M1–M4A):</b> projekt felmérése és módosítása másolaton, diffel és visszaállítással; build és teszt csak a Debian VM sandboxban, rögzített parancsokkal. <small>A rögzített körben ellenőrzött, de nem 100%-os biztonsági minősítés.</small></li>
-          <li><b>Computer Use:</b> ablakkezelés, programindítás és -bezárás, UIA-alapú kattintás és mezőkitöltés; UIA nélkül helyi képes modell céloz. Korlátos önálló mód hibaablak-kezeléssel.</li>
-          <li><b>Windows-diagnosztika és -javítás:</b> csak olvasó diagnosztika, négy javítástípus (tűzfalszabály, szolgáltatás indítása, program beállításfájlja, program újraindítása), mentéssel és ellenőrzéssel. <small>A valódi UAC-os javítás még nincs kipróbálva.</small></li>
-          <li><b>Játékmagyarító:</b> felmérés, fordítás helyi modellel (TranslateGemma), kétkörös gépi ellenőrzés, helyesírás-ellenőrzés, fordítási memória; munkanézet, jóváhagyás, mod és telepítő készítése bemutatkozó videóval. <b>A Xenonauts 2-n végigvitt, a játékban is kipróbált példa van.</b></li>
-          <li><b>Önismeret:</b> a futásidőből tudja, mit tud, és pontosan megmondja, mi nem igazolt.</li>
-          <li><b>Inno Setup telepítő:</b> frissít, mentést készít, és hiba esetén visszaáll.</li>
+        <div class="nx"><h5>✅ Amit tud – kiadott, használható</h5><ul>
+          <li><b>Chat helyi modellekkel (Ollama):</b> nem törölhető alapmodell (qwen3.5:9b), automatikus és kézi modellválasztás. A modell letöltése jóváhagyással vagy a megadott feltételek mellett automatikusan történik. A gondolkodási szint csak igazolt támogatásnál választható.</li>
+          <li><b>Beszélgetések és projektek:</b> tartós helyi tárolás. A műveleti engedélyek csak memóriában élnek, egyszeri jóváhagyással.</li>
+          <li><b>Webes források:</b> időjárás (Open-Meteo), Wikipédia és Brave-keresés – a keresés csak titokszűrt kérdést küld ki.</li>
+          <li><b>ZIP-elemzés a chatben:</b> csak olvasva, kibontás és futtatás nélkül.</li>
+          <li><b>Külső MI:</b> csak a helyi modell elakadásakor, jóváhagyással; helyettesítő modell csak igazoltan ingyenes lehet.</li>
+          <li><b>Computer Use:</b> ablakkezelés, UIA- és képalapú kattintás, mezőkitöltés. Önálló módban legfeljebb 20 lépés és 10 perc, egyszeri jóváhagyással.</li>
+          <li><b>Windows-diagnosztika és -javítás:</b> a diagnosztika csak olvas; a javítás négy rögzített típus, jóváhagyással, mentéssel és visszaállítással.</li>
+          <li><b>Fejlesztői motor:</b> projektek importálása és felmérése, javítási javaslatok (M1–M3); build és teszt a Debian VM sandboxban (M4A) <small>a rögzített körben ellenőrzött</small></li>
+          <li><b>Fejlesztői memória.</b></li>
+          <li><b>Játékmagyarítás:</b> játékkeresés a gépen, felmérés és fordítás helyi modellel, gépi ellenőrzéssel; fordítási memória, javító kör, munkakártya becsült idővel; modként telepített magyarítás és telepítőkészítés. <b>A Xenonauts 2 magyar főmenüje és beállításai valós játékban igazoltak.</b></li>
+          <li><b>Telepítő:</b> Inno Setup, frissítésnél mentéssel és visszaállítással.</li>
         </ul></div>
-        <div class="nx dev"><h5>🛠 Fejlesztési forrás – még nincs kiadva</h5><ul>
-          <li><b>Önfejlesztési lánc:</b> saját forrás módosítása munkapéldányon, csak-fordítás, 10 tesztes saját csomag a hálózat nélküli Windows Sandboxban, hash-ellenőrzött frissítési csomag. Valódi Sandboxon is lefutott: <b>17/17</b>.</li>
-          <li><b>Biztonság:</b> a Nexus soha nem írja felül magát – a frissítéshez jóváhagyás és UAC kell.</li>
-          <li>Hosszú munkamenet-kezelés, külső MI-segítség és GitHub-keresés elakadáskor.</li>
-          <li><b>Közös fejlesztői memória:</b> kódot csak sikeres teszt után menthet.</li>
-          <li><b>Játékmagyarító bővítések:</b> állapotmodell, elfogadott szavak, javító kör és utóellenőrzés.</li>
-          <li><b>Xenonauts 2 lezárás:</b> a telepítő elkészült a munkapéldányon, de még nincs telepítve.</li>
+        <div class="nx dev"><h5>🛠 Fejlesztési forrásban – még nincs kiadva</h5><ul>
+          <li><b>Pontosabb állapotjelzés</b> a fordításnál, és az ellenőrzések szétválasztása.</li>
+          <li><b>Általános profilregiszter:</b> megmondja, mit tud a Nexus egy betallózott játékkal. <small>Ez még nem fordít le minden játékot.</small></li>
+          <li><b>Önfejlesztés a saját forráson:</b> csak-fordítás, Sandbox-teszt és frissítési csomag – egy kis feladaton végigment. <small>A helyi modell megbízhatósága nem igazolt; az éles telepítés mindig jóváhagyásra vár.</small></li>
+          <li><b>🎙 Szinkron modul (új):</b> magyar hang a lefordított sorokból, hangklónozással. <small>A valódi XTTS-futás még nincs kipróbálva, a hang minősége még nem ismert.</small></li>
         </ul></div>
-        <div class="nx plan"><h5>🧭 Nincs igazolva / tervezett</h5><ul>
-          <li>Nincs igazolva: STOP a futó Sandbox közben, a frissítési csomag rollbackjének tényleges alkalmazása, a csomagból épült kiadás telepítése.</li>
-          <li>Nincs igazolva: a magyarítás megjelenése a Xenonauts 2 többi képernyőjén, és az emberi lektorálás – <i>a gépi elfogadás nem jelent helyességet.</i></li>
-          <li>Tervezett (M5–M8): Android, általános projektfuttatás, hálózati réteg, játékba telepítés a magyarítónál, külső magyarító-eszközök (pl. XUnity).</li>
+        <div class="nx plan"><h5>🧭 Amit tudni fog – tervezett, még nincs elkezdve</h5><ul>
+          <li><b>Új játéktípusok adapterei:</b> RPG Maker, Ren’Py, Unity-assetek, Unreal. <small>Ezek nélkül ezeket a játékokat a Nexus nem tudja lefordítani – a jelentése ezt meg is nevezi.</small></li>
+          <li><b>Szinkron 2. fázis:</b> visszacsomagolás a játék hangarchívumaiba, szájmozgás, érzelemvezérlés, AMD GPU-s futtatás.</li>
+          <li><b>M6–M8:</b> hálózati szabályozás, elkülönített Windows-környezet és további lépések.</li>
+          <li><b>Automatikus önismereti nyilvántartás</b> (AK6–AK8).</li>
+          <li><b>Windows-hibajavítás valódi UAC-os próbája</b> – addig a rendszergazdai végrehajtás nem ellenőrzött.</li>
         </ul></div>
-        <div class="tl"><h5>Mérföldkövek</h5><ol>
+        <div class="tl"><h5>Idővonal</h5><ol>
           <li>Chat helyi modellekkel<small>Ollama, qwen3.5:9b alapmodell</small></li>
-          <li>Engedélyrendszer és vészleállítás</li>
-          <li>Fejlesztőmotor M1–M4A<small>másolaton, diffel, Debian VM sandboxban</small></li>
+          <li>Engedélyrendszer és webes források<small>Open-Meteo, Wikipédia, Brave</small></li>
+          <li>Fejlesztői motor M1–M4A<small>felmérés, javaslatok, Debian VM sandbox</small></li>
           <li>Computer Use és Windows-diagnosztika</li>
-          <li>Játékmagyarító<small>Xenonauts 2 – a játékban is kipróbálva</small></li>
+          <li>Játékmagyarító<small>Xenonauts 2 főmenü és beállítások – valós játékban igazolva</small></li>
           <li>v4.61 kiadás<small>Inno Setup telepítővel</small></li>
-          <li class="now">Jelenleg: önfejlesztési lánc<small>Windows Sandbox teszt: 17/17</small></li>
-          <li class="next">M5–M8: Android, projektfuttatás, hálózati réteg</li>
+          <li class="now">Jelenleg: szinkron modul, önfejlesztés, profilregiszter<small>fejlesztési forrásban</small></li>
+          <li class="next">Következik: új játékadapterek, szinkron 2. fázis, M6–M8</li>
         </ol></div>
         <div class="chatdemo"><div class="cd-h"><span><i></i>Nexus AI · chat</span><em>Bemutató · előre megírt beszélgetés</em><button type="button" class="cd-r" title="Újra">↻</button></div><div class="cd-b"></div></div>
         <div class="ba"><div class="ba-h"><span>Magyarítás: előtte – utána</span><em>Példa</em></div>
@@ -624,7 +630,7 @@
           <div class="ba-l hu"><div class="gq"><b>KÜLDETÉS FRISSÍTVE</b><p>Keresd meg az öreg világítótorony-őrt még sötétedés előtt.</p><div class="gk"><span>[E] Elfogad</span><span>[Q] Elutasít</span></div></div><span class="ba-tag r">HU</span></div>
           <div class="ba-k"><span>⇔</span></div></div>
           <small>Húzd a csúszkát! (Példa – ide kerülhetnek a saját képernyőképeid.)</small></div>
-        <div class="chips"><span>Helyi MI</span><span>Ollama</span><span>Windows 11 x64</span><span>Magyar nyelvű</span><span>Játékmagyarító</span><span>Computer Use</span><span>v4.61</span></div></div></div>
+        <div class="chips"><span>Helyi MI</span><span>Ollama</span><span>Windows 11 x64</span><span>Magyar nyelvű</span><span>Játékmagyarító</span><span>Computer Use</span><span>Szinkron (fejlesztés)</span><span>v4.61</span></div></div></div>
       <div class="card work reveal" tabindex="0"><div class="num">02</div><h3>qBittorrent mentés-visszaállító <span class="badge done">Kész</span></h3><p class="sub">Windows segédprogram · mentés és visszaállítás</p><span class="more">Részletek →</span>
         <div class="detail"><p>A qBittorrent fontos beállításainak és adatainak mentésére, majd Windows-újratelepítés után történő visszaállítására készített segédmegoldás.</p>
         <div class="chips"><span>Windows</span><span>qBittorrent</span><span>Mentés</span><span>Visszaállítás</span></div>
@@ -683,7 +689,7 @@
 <button class="tbtn" type="button" title="Terminál (` billentyű)">&gt;_</button>
 <div id="term" role="dialog" aria-label="Terminál"><div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="t">balazs@BALÁZS-PC: ~</span><button class="tx" aria-label="Bezárás">✕</button></div><div class="out"></div><div class="row"><span class="ps">balazs@BALÁZS-PC:~$</span><input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Parancs"></div></div>
 <div class="dots"></div>
-<footer>© 2027–2028 Balázs · <span style="opacity:.7">Tipp: nyisd meg a terminált a &gt;_ gombbal</span></footer>
+<footer><span class="vc" hidden>👁 <b>0</b> látogatás · </span>© 2027–2028 Balázs · <span style="opacity:.7">Tipp: nyisd meg a terminált a &gt;_ gombbal</span></footer>
 
 <!-- Rendszeradatok: automatikus frissítéskor csak ez a blokk változik -->
 <script id="sysinfo" type="application/json">{"os":"Windows 11 Pro","version":"26H2","build":"26300.9974","checked":"2026-11-18"}</script>
@@ -970,7 +976,7 @@ function paneItems(id){return [...document.querySelectorAll('[data-pane="'+id+'"
   window.__termClose=close;
   const pages={kezdo:'kezdo',home:'kezdo',rolam:'rolam',bemutatkozas:'rolam',informatika:'informatika',gep:'informatika',munkaim:'munkaim',munkak:'munkaim',tanulas:'tanulas',tanulok:'tanulas',magyaritasok:'magyaritasok',magyaritas:'magyaritasok',kapcsolat:'kapcsolat'};
   const C={
-    help:()=>'Elérhető parancsok:\n'+[['help','ez a lista'],['whoami','ki vagyok'],['neofetch','a gépem egy pillantásra'],['specs','fő komponensek'],['storage','háttértárak'],['periph','monitor és perifériák'],['vr','VR és egyéb eszközök'],['net','hálózat és rendszer'],['nexus','a Nexus AI-ról'],['goto <lap>','ugrás: kezdo, rolam, informatika, munkaim, tanulas, magyaritasok, kapcsolat'],['magyar','a magyarításaim listája'],['explode','gépház szét- / összeszerelése'],['overclock','??? 🔥'],['snake','kígyó játék'],['amoba','amőba a gép ellen'],['date','dátum és idő'],['clear','képernyő törlése'],['exit','terminál bezárása']].map(([a,b])=>'  <span class="c">'+a.padEnd(12,' ')+'</span><span class="m">'+b+'</span>').join('\n'),
+    help:()=>'Elérhető parancsok:\n'+[['help','ez a lista'],['whoami','ki vagyok'],['neofetch','a gépem egy pillantásra'],['specs','fő komponensek'],['storage','háttértárak'],['periph','monitor és perifériák'],['vr','VR és egyéb eszközök'],['net','hálózat és rendszer'],['nexus','a Nexus AI-ról'],['goto <lap>','ugrás: kezdo, rolam, informatika, munkaim, tanulas, magyaritasok, kapcsolat'],['magyar','a magyarításaim listája'],['explode','gépház szét- / összeszerelése'],['overclock','??? 🔥'],['snake','kígyó játék'],['amoba','amőba a gép ellen'],['stat','hányan nézték meg az oldalt'],['date','dátum és idő'],['clear','képernyő törlése'],['exit','terminál bezárása']].map(([a,b])=>'  <span class="c">'+a.padEnd(12,' ')+'</span><span class="m">'+b+'</span>').join('\n'),
     whoami:()=>'<span class="g">Balázs</span> – számítástechnikával foglalkozom: számítógépeket építek és programozok.',
     specs:()=>'<span class="p">Fő komponensek</span>\n'+list('fo'),
     storage:()=>'<span class="p">Háttértárak</span>\n'+list('hatter')+'\n  <span class="m">Összesen: 8,25 TB</span>',
@@ -988,6 +994,9 @@ function paneItems(id){return [...document.querySelectorAll('[data-pane="'+id+'"
     clear:()=>{out.innerHTML='';return null},
     exit:()=>{close();return null},
     overclock:()=>{close();setTimeout(()=>window.__overclock&&window.__overclock(),300);return 'Túlhajtás indul… 🔥'},
+    dev:()=>{let on=false;try{on=localStorage.getItem('skipgc')==='t';if(on)localStorage.removeItem('skipgc');else localStorage.setItem('skipgc','t')}catch(e){return '<span class="e">Ebben a böngészőben nem lehet beállítani.</span>'}
+      return on?'Fejlesztői mód <span class="e">KI</span> – ebben a böngészőben újra számolja a látogatásaidat.':'Fejlesztői mód <span class="g">BE</span> ✔ – ebben a böngészőben a számláló már nem számolja a látogatásaidat.'},
+    stat:()=>window.__visits?'Az oldalt eddig <span class="g">'+window.__visits+'</span> alkalommal nézték meg. 👁':'<span class="m">A látogatásszám most nem érhető el.</span>',
     sudo:()=>'<span class="e">Hozzáférés megtagadva.</span> Ez az én gépem. 😄',
     ls:()=>'rolam/  informatika/  munkaim/  magyaritasok/  kapcsolat/  nexus-ai/',
     magyar:()=>{const L=window.__mgList||[];if(!L.length)return '<span class="m">Még nincs betöltött magyarítás. (goto magyaritasok)</span>';return '<span class="p">Magyarítások</span>\n'+L.map(g=>'  <span class="c">'+esc(g.name.padEnd(28,' '))+'</span>v'+esc(g.version)+'  <span class="g">⬇ '+g.downloads+'</span>').join('\n')},
@@ -1104,7 +1113,7 @@ window.SFX=SFX;
 
 // ===== Nexus chat bemutató + előtte–utána csúszka (a felnyíló ablakban) =====
 (function(){
-  const SCRIPT=[['u','Szia Nexus! Mit tudsz?'],['n','Szia! A Nexus AI vagyok, Balázs saját, magyar nyelvű MI programja. Az ő gépén futok, helyi modellekkel (Ollama, qwen3.5:9b). Tudok beszélgetni, keresni a weben, kezelni ablakokat, diagnosztizálni a Windowst – és játékokat is fordítok magyarra.'],['u','Le tudsz fordítani egy játékot magyarra?'],['n','Igen! Felmérem a játékot, lefordítom helyi modellel, kétszer ellenőrzöm, és modot meg telepítőt is készítek hozzá. A Xenonauts 2-t már végigvittem. Fontos: a gépi ellenőrzés nem helyettesíti az emberi lektorálást.']];
+  const SCRIPT=[['u','Szia Nexus! Mit tudsz?'],['n','Szia! A Nexus AI vagyok, Balázs saját, magyar nyelvű MI programja. Az ő gépén futok, helyi modellekkel (Ollama, qwen3.5:9b). Tudok beszélgetni, keresni a weben, kezelni ablakokat, diagnosztizálni a Windowst – és játékokat is fordítok magyarra.'],['u','Le tudsz fordítani egy játékot magyarra?'],['n','Igen! Felmérem a játékot, lefordítom helyi modellel, kétszer ellenőrzöm, és modot meg telepítőt is készítek hozzá. A Xenonauts 2 főmenüje és beállításai már magyarul futnak a játékban, és épp tanulok magyarul szinkronizálni is.']];
   let token=0;
   function run(box){const my=++token,body=box.querySelector('.cd-b');body.innerHTML='';let i=0;
     const alive=()=>my===token&&document.getElementById('modal').classList.contains('open');
@@ -1328,6 +1337,21 @@ document.querySelectorAll('.spec').forEach(sp=>{const inf=sp.querySelector('.inf
   sp.addEventListener('click',()=>{const img=sp.querySelector('.pic img.photo');
     mBody.innerHTML=(img?'<img class="dm-img" src="'+img.src+'" alt="">':'')+'<div class="dm-cat">'+inf.dataset.cat+(img?'<span class="dm-own">Saját eszköz</span>':'')+'</div><h3>'+inf.dataset.name+'</h3><div class="dm-desc">'+inf.querySelector('p').innerHTML+'</div><ul class="dm-chips">'+inf.querySelector('ul').innerHTML+'</ul>';
     modal.classList.add('open');modal.querySelector('.box').scrollTop=0;window.SFX&&SFX.play('pop');closePreview()})});
+
+// ===== Látogatószámláló (GoatCounter) =====
+// Ide kell beírni a GoatCounter-kódot (pl. 'balazstech' → balazstech.goatcounter.com).
+// Csak a GitHubra feltöltött oldalon számol. A saját gépeden a terminálba írt 'dev' paranccsal kapcsolhatod ki magad.
+const GOAT_CODE = 'balazstech';
+(function(){
+  if(!GOAT_CODE||!/\.github\.io$/i.test(location.hostname))return;
+  const sc=document.createElement('script');sc.async=true;sc.src='https://gc.zgo.at/count.js';
+  sc.setAttribute('data-goatcounter','https://'+GOAT_CODE+'.goatcounter.com/count');
+  document.head.appendChild(sc);
+  // Látogatásszám kiírása a láblécbe (a GoatCounter beállításaiban engedélyezni kell)
+  fetch('https://'+GOAT_CODE+'.goatcounter.com/counter/TOTAL.json').then(r=>r.ok?r.json():null).then(d=>{
+    if(!d||!d.count)return;const el=document.querySelector('footer .vc');el.querySelector('b').textContent=d.count;el.hidden=false;const h=document.querySelector('.hero-vc');h.querySelector('b').textContent=d.count;h.hidden=false;
+    window.__visits=d.count}).catch(()=>{});
+})();
 
 fromHash();
 </script>
